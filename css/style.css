@@ -4,8 +4,87 @@
     box-sizing: border-box;
 }
 
-.wrapper {
-    height: 100vh;
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* typo */
+h1, button {
+    font-family: 'Baloo 2', cursive;
+}
+
+h1 {
+    color: #466a72;
+    font-size: 50px;
+
+}
+
+p {
+    font-weight: 300;
+    font-size: 18px;
+    color: grey;   
+}
+
+.emph {
+    margin: 10px 0;
+    font-weight: 500;
+    color: #466a72;
+}
+/* /typo */
+
+/* button */
+#gioca__btn {
+    background-color: #dae2ac;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 20px 0;
+    color: #7b823b;
+    transition: transform 0.1s;
+}
+
+button:focus {
+    outline: none;
+}
+#gioca__btn:hover {
+    transform: scale(1.05);
+}
+#gioca__btn:active {
+    transform: scale(1);
+    background-color: #b4bf73;
+}
+
+/* /button */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(../img/bg.svg);
     background-size: cover;
+    position: relative;
+    height: 100vh;
 }
+.wrapper {
+    padding: 100px 80px;
+    text-align: center;
+    background-color: rgba(126, 168, 175, 0.1);
+    border-radius: 20px;
+    width: 70%;
+}
+
+/* .container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    width: 70%;
+    border-radius: 20px;
+    z-index: 0;
+    margin: 0 auto; 
+} */
