@@ -43,6 +43,28 @@ function inArray(array, elemento) {
     return false;
 }
 
+// Chiedo all'utente il grado di difficoltà
+do {
+    var level = parseInt(prompt('Scegli un livello di difficoltà tra 0, 1 o 2.'));
+} while ( isNaN(level) || level < 1 || level > 2 );
+
+
+var rangeMax;
+
+switch (level) {
+    case 0:
+        rangeMax = 100;
+    break;
+
+    case 1:
+        rangeMax = 80;
+    break;
+
+    case 2:
+        rangeMax = 50;
+    break;
+}
+
 //Genero 16 numeri casuali tra 1 e 100
 var bomba;
 var bombe = [];
@@ -50,7 +72,7 @@ var bombe = [];
 //Fino a quando il numero non è incluso nell'array e la lunghezza dell'array è minore di 16 allora...
 while ( bombe.length < 16 )  {
     //...genero un numero
-    bomba = getRndInteger(1, 100);
+    bomba = getRndInteger(1, rangeMax);
     //verifico che non sia nell'array
     if ( inArray(bombe, bomba ) == false) {
          //Lo inserisco nell'array
@@ -58,15 +80,16 @@ while ( bombe.length < 16 )  {
     }
 }
 
-//Chiedo all'utente di inserire un numero compreso da 1 e 100
+//Chiedo all'utente di inserire un numero compreso da 1 e maxRange
 var numeriUtente = [];
 var bombaEsplosa = false;
+var possibility = rangeMax - 16;
 
-while ( numeriUtente.length < 84 && bombaEsplosa == false ) {
-    var numero = parseInt(prompt('inserisci un numero'));
+while ( numeriUtente.length < possibility && bombaEsplosa == false ) {
+    var numero = parseInt(prompt('inserisci un numero tra 1 e ' + rangeMax));
 
-    if ( isNaN(numero) || numero < 1 || numero > 100 ) {
-        alert('Hai inserito un numero non valido');
+    if ( isNaN(numero) || numero < 1 || numero > rangeMax ) {
+        alert('Non hai inserito un numero valido, riprova.');
     } else if ( bombe.includes(numero) == true ) {
         bombaEsplosa = true;
     } else if (numeriUtente.includes(numero) == false) {
