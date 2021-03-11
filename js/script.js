@@ -45,7 +45,7 @@ function inArray(array, elemento) {
 
 // Creo le variabili 
 var gioca = document.getElementById('gioca__btn');
-var gameResult = document.getElementById('game__result');
+var gameResult = document.getElementById('game_result');
 
 // Creo l'evento al click del bottone 
 gioca.addEventListener('click',
@@ -105,12 +105,12 @@ gioca.addEventListener('click',
 
         if (bombaEsplosa == true) {
             console.log('Bravo! Sei riuscito a raccogliere ' + numeriUtente.length + ' fiori, ma puoi fare di meglio!');
-            gameResult.innerHTML('Bravo! Sei riuscito a raccogliere ' + numeriUtente.length + ' fiori, ma puoi fare di meglio!');
+            gameResult.innerHTML = 'Bravo! Sei riuscito a raccogliere ' + numeriUtente.length + ' fiori, ma puoi fare di meglio!';
+            gameResult.style.display = 'block';
         } else {
             console.log('Complimenti! Sei riuscito a raccogliere tutti i fiori del prato!!');
-            gameResult.innerHTML('Complimenti! Sei riuscito a raccogliere tutti i fiori del prato!!');
+            gameResult.innerHTML = 'Complimenti! Sei riuscito a raccogliere tutti i fiori del prato!!';
+            gameResult.style.display = 'block';
         }
     }
-   
 );
-
